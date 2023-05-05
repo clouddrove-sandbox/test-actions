@@ -33,6 +33,7 @@ jobs:
           draft: false
           makeLatest: true
           name: ${{ github.ref_name }}
+          # owner: clouddrove-ci
           body: ${{ steps.changelog.outputs.changes }}
           token: '${{ secrets.GITHUB }}'
 
@@ -42,5 +43,6 @@ jobs:
           branch: ${{ inputs.branch}}
           commit_user_name: clouddrove-ci # defaults to "github-actions[bot]"
           commit_user_email: 84795582+clouddrove-ci@users.noreply.github.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
+          commit_author: clouddrove-ci <84795582+clouddrove-ci@users.noreply.github.com>
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }}'
           file_pattern: CHANGELOG.md
