@@ -39,6 +39,6 @@ jobs:
           branch: master
           commit_user_name: clouddrove-ci # defaults to "github-actions[bot]"
           commit_user_email: 84795582+clouddrove-ci@users.noreply.github.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
-          commit_author: Anmol Nagpal <anmol@clouddrove.com>
+          commit_author: CloudDrove CI <84795582+clouddrove-ci@users.noreply.github.com>
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }}'
           file_pattern: CHANGELOG.md
