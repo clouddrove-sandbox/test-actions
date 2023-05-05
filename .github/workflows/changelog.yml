@@ -2,10 +2,6 @@ name: CHANGELOG
 
 on:
   workflow_call:
-    inputs:
-      branch:
-        required: true
-        type: string
 
 jobs:
   create_changelog:
@@ -40,9 +36,9 @@ jobs:
       - name: Commit CHANGELOG.md
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          branch: ${{ inputs.branch}}
+          branch: master
           commit_user_name: clouddrove-ci # defaults to "github-actions[bot]"
           commit_user_email: 84795582+clouddrove-ci@users.noreply.github.com # defaults to "41898282+github-actions[bot]@users.noreply.github.com"
-          commit_author: clouddrove-ci <84795582+clouddrove-ci@users.noreply.github.com>
+          commit_author: Anmol Nagpal <anmol@clouddrove.com>
           commit_message: 'docs: update CHANGELOG.md for ${{ github.ref_name }}'
           file_pattern: CHANGELOG.md
