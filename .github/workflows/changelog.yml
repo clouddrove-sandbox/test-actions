@@ -8,7 +8,7 @@ on:
         type: string
 
 jobs:
-  deploy:
+  create_changelog:
     runs-on: ubuntu-latest
 
     steps:
