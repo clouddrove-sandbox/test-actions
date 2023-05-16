@@ -1,18 +1,20 @@
 name: 'Terraform Configuration Drift Detection'
 
 on:
+  schedule:
+    - cron: '30 13 * * *' # runs nightly at 3:41 am
   workflow_call: 
-  # schedule:
-  #   - cron: '2 * * * *' # runs nightly at 3:41 am
     inputs:
       working_directory:
         description: 'Root directory of the terraform where all resources exist.'
         required: true
         type: string
+        default: _example
       provider:
         description: 'Cloud provider to run the workflow. e.g. azurerm or aws'
         required: true
         type: string
+        default: azurerm
 
 #Special permissions required for OIDC authentication
 permissions:
