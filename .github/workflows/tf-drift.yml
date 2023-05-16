@@ -18,7 +18,7 @@ on:
       aws_region:
         required: false
         type: string
-        default: eu-west-1
+        default: us-east-1
         description: 'AWS region of terraform deployment.'
 
 #Special permissions required for OIDC authentication
@@ -26,12 +26,6 @@ permissions:
   id-token: write
   contents: read
   issues: write
-
-#These environment variables are used by the terraform azure provider to setup OIDD authenticate. 
-# env:
-#   ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
-#   ARM_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
-#   ARM_TENANT_ID: "${{ secrets.AZURE_TENANT_ID }}"
 
 jobs:
   terraform-plan:
