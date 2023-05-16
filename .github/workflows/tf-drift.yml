@@ -54,7 +54,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.aws_access_key_id }}
         aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
-        aws-region: ${{ secrets.aws_region }}
+        aws-region: ${{ inputs.aws_region }}
 
     # Install azure-cli
     - name: Install Azure CLI
