@@ -18,6 +18,7 @@ on:
       aws_region:
         required: false
         type: string
+        default: eu-west-1
         description: 'AWS region of terraform deployment.'
 
 #Special permissions required for OIDC authentication
