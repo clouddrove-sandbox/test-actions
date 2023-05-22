@@ -23,11 +23,6 @@ on:
         default: ""
         type: string
         description: 'Terraform var file directory. e.g. vars/dev.tfvars'
-      environment:
-        required: false
-        default: ""
-        type: string
-        description: 'Environment to run the workflow.'
     secrets:
       AZURE_CREDENTIALS:
         required: false
@@ -45,7 +40,6 @@ jobs:
   terraform-plan:
     name: 'Terraform Plan'
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
     env:
       #this is needed since we are running terraform with read-only permissions
       ARM_SKIP_PROVIDER_REGISTRATION: true
