@@ -83,7 +83,7 @@ jobs:
         export exitcode=0
         cd ${{ inputs.working_directory }}
         if [ -n "${{ inputs.tf_argument }}" ]; then
-        terraform plan -detailed-exitcode -no-color -out tfplan --var-file=${{ inputs.tf_argument } || export exitcode=$?
+        terraform plan -detailed-exitcode -no-color -out tfplan --var-file=${{ inputs.tf_argument }} || export exitcode=$?
         else
         terraform plan -detailed-exitcode -no-color -out tfplan || export exitcode=$?
         fi
