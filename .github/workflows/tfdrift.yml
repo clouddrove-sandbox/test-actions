@@ -28,11 +28,15 @@ on:
         default: ""
         type: string
         description: 'Environment to run the workflow.'
-        
+    # secrets:
+    #   AZURE_CREDENTIALS:
+    #     required: false
+    #   GITHUB:
+    #     required: true
 jobs:
   terraform-plan:
     name: 'Terraform Plan'
-    environment: ${{ github.event.inputs.environment }}
+    environment: ${{ inputs.environment }}
     runs-on: ubuntu-latest
     env:
       #this is needed since we are running terraform with read-only permissions
@@ -53,6 +57,16 @@ jobs:
         aws-access-key-id: ${{ secrets.aws_access_key_id }}
         aws-secret-access-key: ${{ secrets.aws_secret_access_key }}
         aws-region: ${{ inputs.aws_region }}
+      
+    # print secret values
+    - name: Print secrets task
+      env: 
+        MY_VAL: ${{ secrets.AZURE_CREDENTIALS }}
+      run: |
+        import os
+        for q in (os.getenv("MY_VAL")):
+          print(q)
+      shell: python
 
     # Install azure-cli
     - name: Install Azure CLI
