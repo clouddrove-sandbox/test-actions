@@ -31,8 +31,10 @@ on:
     secrets:
       AZURE_CREDENTIALS:
         required: false
+        description: 'Azure Credentials to install Azure in github runner.'
       GITHUB:
         required: true
+        description: 'PAT of the user to run the jobs.'
 jobs:
   terraform-plan:
     name: 'Terraform Plan'
