@@ -28,11 +28,11 @@ on:
         default: ""
         type: string
         description: 'Environment to run the workflow.'
-    # secrets:
-    #   AZURE_CREDENTIALS:
-    #     required: false
-    #   GITHUB:
-    #     required: true
+    secrets:
+      AZURE_CREDENTIALS:
+        required: false
+      GITHUB:
+        required: true
 jobs:
   terraform-plan:
     name: 'Terraform Plan'
